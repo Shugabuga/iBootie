@@ -50,7 +50,7 @@ Here, put your text for the bot. I put my tutorial here.
 **Supports basic markup, like links and formatting**.
 Blah Blah Blah.
 
-**I am a bot! [[Information]](https://www.reddit.com/r/jailbreak/comments/3sqmab/meta_i_created_a_bot_to_help_people_with_boot/) [[Creator]](https://reddit.com/u/HeyItsShuga) [[Suggestions]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Suggestions) [[Feedback]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Feedback)**
+**I am a bot! [[Information]](https://www.reddit.com/r/jailbreak/comments/3sqmab/meta_i_created_a_bot_to_help_people_with_boot/) [[Creator]](https://reddit.com/u/HeyItsShuga) [[Feedback]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Feedback)**
 ''') ##Message
             print "Bot replying to : ", submission.title
 
