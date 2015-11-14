@@ -35,22 +35,22 @@ else:
         posts_replied_to = filter(None, posts_replied_to)
 
 # Get the top 5 values from our subreddit
-subreddit = r.get_subreddit('jailbreak')
-for submission in subreddit.get_new(limit=5):
+subreddit = r.get_subreddit('jailbreak') ##Subreddit this bot lives on.
+for submission in subreddit.get_new(limit=5): #Gets newest posts and replies.
     # print submission.title
 
     # If we haven't replied to this post before
     if submission.id not in posts_replied_to:
 
         # Do a case insensitive search
-        if re.search("boot loop", submission.selftext, re.IGNORECASE):
+        if re.search("SEARCH_TERM", submission.selftext, re.IGNORECASE): #Looks for SEARCH_TERM in a post's text.
             # Reply to the post
             submission.add_comment('''
 Here, put your text for the bot. I put my tutorial here.
 **Supports basic markup, like links and formatting**.
 Blah Blah Blah.
 
-**I am a bot! [[Information]](https://www.reddit.com/r/jailbreak/comments/3sqmab/meta_i_created_a_bot_to_help_people_with_boot/)  [[Creator]](https://reddit.com/u/HeyItsShuga) [[Suggestions]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Suggestions) [[Feedback]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Feedback)**
+**I am a bot! [[Information]](https://www.reddit.com/r/jailbreak/comments/3sqmab/meta_i_created_a_bot_to_help_people_with_boot/) [[Creator]](https://reddit.com/u/HeyItsShuga) [[Suggestions]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Suggestions) [[Feedback]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Feedback)**
 ''') ##Message
             print "Bot replying to : ", submission.title
 
