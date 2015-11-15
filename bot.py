@@ -35,7 +35,7 @@ else:
 
 # Get the top 5 values from our subreddit
 subreddit = r.get_subreddit(SUBREDDIT) ##Subreddit this bot lives on.
-for submission in subreddit.get_new(limit=5): #Gets newest posts and replies.
+for submission in subreddit.get_new(limit=10): #Gets newest posts and replies.
     # print submission.title
 
     # If we haven't replied to this post before
