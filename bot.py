@@ -11,7 +11,7 @@ from config_bot import * ##This is calling a seperate file for the login informa
 
 # Check that the file that contains our username exists
 if not os.path.isfile("config_bot.py"):
-    print "You must create a config file with your username and password."
+    print "You must create a config file with the settings for this bot!"
     print "Please see config_bot.py"
     exit(1)
 
