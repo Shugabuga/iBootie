@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #iBooie Tech Support Bot
-#This is a TEMPLATE. Based off the tutorial at http://pythonforengineers.com/build-a-reddit-bot-part-2-reply-to-posts/ and modified to allow for multiple lines and UTF-8 
+#Edit all values in config_bot.py!
 #Note: this requires PRAW to work.
 #!/usr/bin/python
 import praw
@@ -16,7 +16,6 @@ if not os.path.isfile("config_bot.py"):
     exit(1)
 
 # Create the Reddit instance
-user_agent = ("InsertUserAgentHere")
 r = praw.Reddit(user_agent=user_agent)
 
 # and login
@@ -35,7 +34,7 @@ else:
         posts_replied_to = filter(None, posts_replied_to)
 
 # Get the top 5 values from our subreddit
-subreddit = r.get_subreddit('jailbreak') ##Subreddit this bot lives on.
+subreddit = r.get_subreddit(SUBREDDIT) ##Subreddit this bot lives on.
 for submission in subreddit.get_new(limit=5): #Gets newest posts and replies.
     # print submission.title
 
@@ -43,15 +42,9 @@ for submission in subreddit.get_new(limit=5): #Gets newest posts and replies.
     if submission.id not in posts_replied_to:
 
         # Do a case insensitive search
-        if re.search("SEARCH_TERM", submission.selftext, re.IGNORECASE): #Looks for SEARCH_TERM in a post's text.
+        if re.search(KEYWORD, submission.selftext, re.IGNORECASE): #Looks for SEARCH_TERM in a post's text.
             # Reply to the post
-            submission.add_comment('''
-Here, put your text for the bot. I put my tutorial here.
-**Supports basic markup, like links and formatting**.
-Blah Blah Blah.
-
-**I am a bot! [[Information]](https://www.reddit.com/r/jailbreak/comments/3sqmab/meta_i_created_a_bot_to_help_people_with_boot/) [[Creator]](https://reddit.com/u/HeyItsShuga) [[Feedback]](https://www.reddit.com/message/compose/?to=HeyItsShuga&subject=iBootie Feedback)**
-''') ##Message
+            submission.add_comment(REPLY) ##Message
             print "Bot replying to : ", submission.title
 
             # Store the current id into our list
